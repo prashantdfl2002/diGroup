@@ -29,7 +29,7 @@ const submitContactform = async(req,res)=>{
         })
         res.status(200).json({success: true,message: 'message sent successfully'})
     }catch(err){
-        res.status(500).json({success: false, message: 'failed to sent message'})
+        res.status(500).json({success: false, message: err.message})
     }
 }
 
