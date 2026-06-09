@@ -7,6 +7,12 @@ const submitContactform = async(req,res)=>{
         return res.status(400).json({ success: false, message: "All fields are required." });
     }
 
+    console.log("SMTP_EMAIL:", process.env.SMTP_EMAIL);
+console.log(
+  "SMTP_PASSWORD:",
+  process.env.SMTP_PASSWORD ? "FOUND" : "MISSING"
+);
+
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
